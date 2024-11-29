@@ -1,0 +1,171 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #f0f4ff, #d4e4fc);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    /* Added fallback color in case the image doesn't load */
+    background-color: #f0f4ff;
+    background-image: url('/src/assets/stagnography.webp');
+    background-size: cover; /* Ensure the background image covers the screen */
+    background-repeat: no-repeat;
+    background-position: center; /* Center the image */
+}
+
+.container {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0.5;
+    overflow: hidden; /* Ensures child elements don’t overflow */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.container:hover {
+    opacity: 0.95;
+    transform: translateY(-5px);
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.1); /* Adds a light blue overlay */
+    z-index: -1; /* Places the overlay behind content */
+    transition: background 0.3s ease;
+}
+
+.container:hover::before {
+    background: rgba(0, 123, 255, 0.2); /* Slightly darkens the overlay on hover */
+}
+
+/* Header Styling */
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to make the text pop */
+}
+
+header p {
+    font-size: 16px;
+    color: #0a528e;
+    margin: 0;
+}
+
+button {
+    color: #0a528e;
+    cursor: pointer;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    background: linear-gradient(90deg, #0056b3, #003f8a);
+    transform: scale(1.05); /* Adds a subtle zoom effect on hover */
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+    text-align: center;
+    line-height: 1.5; /* Improves readability */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Adjust padding for smaller screens */
+        width: 90%; /* Makes the container more fluid */
+    }
+
+    header h1 {
+        font-size: 28px; /* Reduce font size for smaller screens */
+    }
+
+    .nav-link {
+        font-size: 14px; /* Adjust font size in the nav bar */
+        padding: 8px 15px;
+    }
+}
+
+/* Custom File Upload Styling */
+.file-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.file-input input[type="file"] {
+    font-size: 100px; /* Makes the native input button large */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Hides the native input button */
+    z-index: 2;
+    cursor: pointer;
+}
+
+.file-input-label {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    text-align: center;
+}
+
+.file-input-label:hover {
+    background: linear-gradient(90deg, #0056b3, #003f8a);
+    transform: scale(1.05); /* Adds a zoom effect */
+}
+
+.file-name {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+    margin-left: 10px;
+}
